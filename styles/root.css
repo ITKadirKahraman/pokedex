@@ -1,0 +1,21 @@
+:root {
+    /*
+    ***** COLORS
+    */
+    --background-color: rgb(0,6,1);
+    --section-color: rgb(41, 49, 51);
+
+    /*
+    ***** SIZE
+    */
+    --size-0: 0;
+
+    /* px */
+    --size-188px: 188px;
+
+    /* % */
+    --size-100P: 100%;
+
+    /* vh */
+    --size-100vh: 100vh;
+}
