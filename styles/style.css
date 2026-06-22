@@ -1,3 +1,7 @@
+/*
+***** header
+*/
+
 header {
     background-color: var(--section-color);
     border: 1px solid whitesmoke;
@@ -7,11 +11,24 @@ header {
     height: 80px;
 }
 
+#headerContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* header left */
+
 .headerLeft {
     display: flex;
     justify-content: flex-start;
-    margin: 5px 0 0 20px;
+    align-items: center;
     gap: 10px;
+}
+
+.pokédex {
+    height: 48px;
+    width: 48px;
 }
 
 h1 {
@@ -22,17 +39,60 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
 }
 
-.pokédex {
-    height: 48px;
-    width: 48px;
+span {
+    color: rgb(254,202,28);
+    -webkit-text-stroke: 2px solid rgb(55,97,168);
 }
+
+/* header right */
 
 .headerRight {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
 }
+
+.searchText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    gap: 5px;
+}
+
+.pokémonInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    border: 1px solid whitesmoke;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.searchPokémon {
+    background-color: transparent;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+
+.lopu {
+    width: 32px;
+    width: 32px;
+}
+
+/*
+***** footer
+*/
 
 footer {
     background-color: var(--section-color);
@@ -41,7 +101,7 @@ footer {
     justify-content: center;
     align-items: center;
     border: 1px solid whitesmoke;
-    border-radius: 25px 0 25px 0;
+    border-radius: 0 25px 0 25px ;
 }
 
 #footerContainer {
@@ -53,4 +113,10 @@ footer {
     color: white;
     font-size: 18px;
     font-weight: 400;
+}
+
+.pokéball {
+    width: 48px;
+    height: 48px;
+    margin-top: 5px;
 }
