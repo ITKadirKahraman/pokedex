@@ -1,6 +1,6 @@
 # 🟡 Pokédex – Version 1.0
 
-![Pokédex Logo](./assets/icons/pokédex.svg)
+![Pokédex Logo](./assets/img/pokédex.png)
 
 ## 📖 Über das Projekt
 
