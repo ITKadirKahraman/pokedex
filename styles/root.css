@@ -4,6 +4,25 @@
     */
     --background-color: rgb(0,6,1);
     --section-color: rgb(41, 49, 51);
+    --type-fire: rgb(230, 57, 70);
+    --type-water: rgb(69, 123, 157);
+    --type-grass: rgb(46, 106, 79);
+    --type-electric: rgb(255, 212, 80);
+    --type-poison: rgb(123, 45, 139);
+    --type-bug: rgb(184, 198, 71);
+    --type-normal: rgb(183, 183, 167);
+    --type-flying: rgb(153, 167, 255);
+    --type-ground: rgb(225, 197, 110);
+    --type-ice: rgb(152, 216, 216);
+    --type-fighting: rgb(192, 48, 40);
+    --type-psychic: rgb(248, 88, 136);
+    --type-rock: rgb(184, 160, 56);
+    --type-ghost: rgb(112, 88, 152);
+    --type-dragon: rgb(112, 56, 248);
+    --type-dark: rgb(112, 88, 72);
+    --type-steel: rgb(184, 184, 208);
+    --type-fairy: rgb(238, 153, 172);
+    --type-black: rgb(0, 0, 0);
 
     /*
     ***** SIZE
@@ -11,7 +30,7 @@
     --size-0: 0;
 
     /* px */
-    --size-188px: 188px;
+    --size-140px: 140px;
 
     /* % */
     --size-100P: 100%;
