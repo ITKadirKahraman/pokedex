@@ -1,0 +1,63 @@
+ol {
+    list-style: none;  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 100%;
+}
+
+li {
+    display: flex;
+}
+
+.pokemonCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 240px;
+    width: 180px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+}
+
+.spanPokemon {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+#image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 148px;
+}
+
+.cardBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    font-size: 16px;
+    font-weight: 400;
+    width: 75px;
+    border-radius: 0 25px 0 25px;
+}
