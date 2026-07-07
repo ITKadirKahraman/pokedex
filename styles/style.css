@@ -42,7 +42,7 @@ h3 {
     gap: 5px;
 }
 
-span {
+.spanHeader {
     color: rgb(254,202,28);
     -webkit-text-stroke: 2px solid rgb(55,97,168);
 }
