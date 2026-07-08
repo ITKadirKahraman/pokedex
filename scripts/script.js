@@ -1,8 +1,13 @@
+const BASE_URL = "https://pokeapi.co/api/v2/";
+const LOAD_COUNT = 20;
 let layoutPokemon = [];
+let allPokemons = [];
+let currentIndex = 0;
 
 function init() {
     renderHeader();
     fetchDataJson();
+    renderLoadMoreContainer();
     renderFooter();
 }
 
@@ -16,6 +21,10 @@ function renderFooter() {
 
 function renderSmallCards() {
     document.getElementById('pokemonList').innerHTML = getSmallPokemonCards();
+}
+
+function renderLoadMoreContainer() {
+    document.getElementById('loadMoreContainer').innerHTML = getLoadMoreButton();
 }
 
 async function fetchDataJson() {
@@ -35,6 +44,13 @@ async function fetchDataJson() {
     renderLayoutPokemon();
 }
 
+async function renderLoadMorePokemon() {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
+    const data = await response.json();
+
+    
+}
+
 async function postData(url = "", data = {}) {
     const response = await fetch(url, {
         method: "GET", // "GET", POST, PUT, DELETE, etc.
@@ -52,4 +68,28 @@ function renderLayoutPokemon() {
     for (let index = 0; index < layoutPokemon.length; index++) {
         content.innerHTML += getSmallPokemonCards(layoutPokemon[index]);
     }
+}
+
+function arrowLeft() {
+    let dialogLeft = document.getElementById('arrowLeft');
+    
+    dialogLeft.addEventListener("click", () => {
+        currentIndex--;
+        if(currentIndex < 0) {
+            currentIndex = allPokemons.length - 1;
+        }
+        renderDialog();
+    });
+}
+
+function arrowRight() {
+    let dialogRight = document.getAnimations('arrowRight');
+    
+    dialogRight.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex >= allPokemons.length) {
+            currentIndex = 0;
+        }
+        renderDialog();
+    });
 }
