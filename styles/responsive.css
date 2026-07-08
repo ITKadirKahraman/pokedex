@@ -1,0 +1,9 @@
+@media (max-width: 560px) {
+    h3 {
+        display: none;
+    }
+    
+    .searchText {
+        display: none;
+    }
+}
