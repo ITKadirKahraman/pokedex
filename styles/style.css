@@ -91,6 +91,22 @@ h3 {
 }
 
 /*
+***** load more
+*/
+
+.btnLoadMore {
+    border: 1px solid rgb(254,202,28);
+    border-radius: 25px 0 25px 0;
+    cursor: pointer;
+    margin: 20px 0 20px 0;
+    background-color: rgb(254,202,28);
+    color: var(--type-black);
+    height: 28px;
+    width: 124px;
+    font-size: 18px;
+}
+
+/*
 ***** footer
 */
 
@@ -101,7 +117,8 @@ footer {
     justify-content: center;
     align-items: center;
     border: 1px solid whitesmoke;
-    border-radius: 0 25px 0 25px ;
+    border-radius: 0 25px 0 25px;
+    margin-top: 10px;
 }
 
 #footerContainer {
