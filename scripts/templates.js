@@ -34,30 +34,49 @@ function getSmallPokemonCards(pokemon, index) {
 
 function getDialogPokemonCard(pokemon) {
     return `
-        <dialog>
             <div class="">
                 <button class="closeBtn" id="closeBtn" onclick="closeDialog()">
                     <img class="close" id="close" src="./assets/icons/close.svg" alt="Close">
                 </button>
                 <div class="dialogHeader">
-                    <h2></h2>
-                    <div class="cardBottom" id="types">
-                        <p>${pokemon.types.map(type => `<div class="type ${type.type.name}"> ${type.type.name}</div>`).join("")}</p>
+                    <h2>${pokemon.name}</h2>
+                    <div class="dialogLeft">
+                        <p>ID${pokemon.id}</p>
+                        <div class="cardBottom" id="types">
+                            <p>${pokemon.types.map(type => `<div class="type ${type.type.name}"> ${type.type.name}</div>`).join("")}</p>
+                        </div>
+                        <p>height ${pokemon.height} m</p>
+                        <p>weight ${pokemon.weight} kg</p>
                     </div>
                     <img data-id="cardImage" id="image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+                    <div class="dialogRight">
+                        <p>${pokemon.stats.stat[0].name} ${pokemon.stats.base_stat[0]}</p>
+                        <p>${pokemon.stats.stat[1].name} ${pokemon.stats.base_stat[1]}</p>
+                        <p>${pokemon.stats.stat[2].name} ${pokemon.stats.base_stat[2]}</p>
+                        <p>${pokemon.stats.stat[5].name} ${pokemon.stats.base_stat[5]}</p>
+                    </div>
                 </div>
                 <div>
-                        <button></button>
-                        <button></button>
-                        <button></button>
-                        <button></button>
+                        <h4>Evolution Chain</h4>
                 </div>
+                <ul data-id="evolution-chain"
+                    id="#EvolutionChain${pokemon.id}"
+                    class="evolutionChain">
+                </ul>
                 <nav>
                     <button class="arrowLeft" id="arrowLeft" aria-label="Pfeil nach links">←</button>
                     <button class="arrowRight" id="arrowRight" aria-label="Pfeil nach Rechts">→</button>
                 </nav>
             </div>
-        </dialog>
+    `;
+}
+
+function evolutionChain(pokemon) {
+    return `
+        <li>
+            <h4>${pokemon.name}</h4>
+            <img src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
+        </li>
     `;
 }
 
