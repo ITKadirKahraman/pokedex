@@ -27,6 +27,14 @@ function renderLoadMoreContainer() {
     document.getElementById('loadMoreContainer').innerHTML = getLoadMoreButton();
 }
 
+function renderDialog() {
+    document.getElementById('dialog').innerHTML = getDialogPokemonCard();
+}
+
+function openDialog() {
+    renderDialog()
+}
+
 async function fetchDataJson() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
     const data = await response.json();
