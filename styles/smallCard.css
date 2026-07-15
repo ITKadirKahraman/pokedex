@@ -2,9 +2,9 @@ ol {
     list-style: none;  
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: var(--size-16px);
     justify-content: center;
-    max-width: 100%;
+    max-width: var(--size-100P);
 }
 
 li {
@@ -16,10 +16,10 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 240px;
-    width: 180px;
+    height: var(--size-240px);
+    width: var(--size-180px);
     border: none;
-    border-radius: 10px;
+    border-radius: var(--size-10px);
     cursor: pointer;
     flex-wrap: wrap;
 }
@@ -28,19 +28,19 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30%;
+    gap: var(--size-30P);
 }
 
 .spanPokemon {
-    color: rgb(0, 0, 0);
-    font-size: 18px;
+    color: rgb(var(--size-0), var(--size-0), var(--size-0));
+    font-size: var(--size-18px);
 }
 
 #image {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 148px;
+    height: var(--size-148px);
 }
 
 .cardBottom {
@@ -48,16 +48,16 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 5px;
+    gap: var(--size-5px);
 }
 
 .type {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid;
-    font-size: 16px;
-    font-weight: 400;
-    width: 75px;
-    border-radius: 0 25px 0 25px;
+    border: var(--size-2px) solid;
+    font-size: var(--size-16px);
+    font-weight: var(--size-400);
+    width: var(--size-75px);
+    border-radius: var(--size-0) var(--size-25px) var(--size-0) var(--size-25px);
 }
