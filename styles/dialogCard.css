@@ -1,0 +1,12 @@
+#dialog {
+    height: var(--size-80P);
+    width: var(--size-80P);
+    border: var(--size-2px) solid var(--pokemonYellow);
+    border-radius: var(--size-25px);
+    background-color: var(--background-color);
+}
+
+.closeBtn {
+    height: 48px;
+    background-color: white;
+}
