@@ -4,6 +4,8 @@
     */
     --background-color: rgb(0,6,1);
     --section-color: rgb(41, 49, 51);
+    --pokemonYellow: rgb(254, 202, 28);
+    --pokemonSpan: rgb(55,97,168);
     --type-fire: rgb(230, 57, 70);
     --type-water: rgb(69, 123, 157);
     --type-grass: rgb(46, 106, 79);
@@ -28,11 +30,33 @@
     ***** SIZE
     */
     --size-0: 0;
+    --size-400: 400;
 
     /* px */
+    --size-1px: 1px;
+    --size-2px: 2px;
+    --size-5px: 5px;
+    --size-10px: 10px;
+    --size-16px: 16px;
+    --size-18px: 18px;
+    --size-20px: 20px;
+    --size-24px: 24px;
+    --size-25px: 25px;
+    --size-28px: 28px;
+    --size-32px: 32px;
+    --size-48px: 48px;
+    --size-60px: 60px;
+    --size-75px: 75px;
+    --size-80px: 80px;
     --size-140px: 140px;
+    --size-148px: 148px;
+    --size-180px: 180px;
+    --size-240px: 240px;
+    --size-560px: 560px;
 
     /* % */
+    --size-30P: 30%;
+    --size-80P: 80%;
     --size-100P: 100%;
 
     /* vh */
