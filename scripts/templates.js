@@ -6,8 +6,8 @@ function getHeader() {
         </div>
         <div class="headerRight">
             <p class="searchText">Search <span class="spanHeader">Pokémon</span></p>
-            <input type="text" class="pokémonInput" id="pokémonInput" placeholder="Search Pokémon" onclick="enterKey(), addCity()">
-            <button class="searchPokémon" onclick=""><img class="lopu" src="./assets/icons/lopu.svg" alt="Lopu"></button>
+            <input type="text" class="pokemonInput" id="pokemonInput" placeholder="Search Pokémon" onclick="searchPokemon()">
+            <button class="searchPokemon" onclick="searchPokemon()"><img class="lopu" src="./assets/icons/lopu.svg" alt="Lopu"></button>
         </div>
     `;
 }
@@ -33,8 +33,9 @@ function getSmallPokemonCards(pokemon, index) {
 }
 
 function getDialogPokemonCard(pokemon) {
+    console.log(pokemon);
     return `
-            <div class="">
+            <div class="dialogCard">
                 <button class="closeBtn" id="closeBtn" onclick="closeDialog()">
                     <img class="close" id="close" src="./assets/icons/close.svg" alt="Close">
                 </button>
@@ -50,10 +51,10 @@ function getDialogPokemonCard(pokemon) {
                     </div>
                     <img data-id="cardImage" id="image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
                     <div class="dialogRight">
-                        <p>${pokemon.stats.stat[0].name} ${pokemon.stats.base_stat[0]}</p>
-                        <p>${pokemon.stats.stat[1].name} ${pokemon.stats.base_stat[1]}</p>
-                        <p>${pokemon.stats.stat[2].name} ${pokemon.stats.base_stat[2]}</p>
-                        <p>${pokemon.stats.stat[5].name} ${pokemon.stats.base_stat[5]}</p>
+                        <p>${pokemon.stats[0].stat.name}: ${pokemon.stats[0].base_stat}</p>
+                        <p>${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}</p>
+                        <p>${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}</p>
+                        <p>${pokemon.stats[5].stat.name}: ${pokemon.stats[5].base_stat}</p>
                     </div>
                 </div>
                 <div>
@@ -64,8 +65,8 @@ function getDialogPokemonCard(pokemon) {
                     class="evolutionChain">
                 </ul>
                 <nav>
-                    <button class="arrowLeft" id="arrowLeft" aria-label="Pfeil nach links">←</button>
-                    <button class="arrowRight" id="arrowRight" aria-label="Pfeil nach Rechts">→</button>
+                    <button class="arrowLeft" id="arrowLeft" aria-label="Pfeil nach links" onclick="arrowLeft()">←</button>
+                    <button class="arrowRight" id="arrowRight" aria-label="Pfeil nach Rechts" onclick="arrowRight()">→</button>
                 </nav>
             </div>
     `;
@@ -82,7 +83,19 @@ function evolutionChain(pokemon) {
 
 function getLoadMoreButton() {
     return `
-        <button class="btnLoadMore" id="loadMore">Load more</button>
+        <button class="btnLoadMore" id="loadMore" onclick="loadMoreBtn()">Load more</button>
+    `;
+}
+
+function getPokemonNotFound(searchInput) {
+    return `
+        <p data-id="not-found">Sorry, no Pokémon found for "${searchInput}"!😢 </p>
+    `;
+}
+
+function getMessageMinLetters() {
+    return `
+        <p data-id="min-letters">Please enter at least 3 letters for search.</p>
     `;
 }
 
