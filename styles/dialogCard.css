@@ -6,7 +6,223 @@
     background-color: var(--background-color);
 }
 
+.dialogMiddle {
+    display: none;
+}
+
+/*
+***** DIALOG HEADER 
+*/
+
 .closeBtn {
-    height: 48px;
-    background-color: white;
+    height: var(--size-48px);
+    width: var(--size-48px);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.closeBtn:hover .close{
+    content: url(../assets/icons/closeHover.svg);
+}
+
+/*
+***** DIALOG BODY 
+*/
+
+.dialogHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: var(--size-100P);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--size-40Mpx);
+}
+
+/* DIALOG LEFT SIDE */
+
+.dialogLeft {
+    height: var(--size-40P);
+    width: var(--size-30P);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--size-20px);
+}
+
+.typesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--size-5px);
+    margin: var(--size-0);
+}
+
+.typesContainer.single {
+    width: var(--size-100P);
+}
+
+.typesContainer.multiple {
+    width: var(--size-75P);
+}
+
+.none {
+    display: none;
+}
+
+.types {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--size-2px) solid;
+    font-size: var(--size-16px);
+    font-weight: var(--size-400);
+    font-size: var(--size-24px);
+    font-weight: var(--size-400);
+    width: var(--size-72P);
+    border-radius: var(--size-25px) var(--size-0) var(--size-25px) var(--size-0);
+}
+
+.size {
+    font-size: var(--size-24px);
+    font-weight: var(--size-400);
+    width: var(--size-72P);
+    text-align: center;
+    color: var(--type-white);
+    border: var(--size-2px) solid var(--pokemonYellow);
+    border-radius: var(--size-25px) var(--size-0) var(--size-25px) var(--size-0);
+    margin: var(--size-0);  
+}
+
+/* DIALOG MIDDLE */
+
+#imageDialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--size-280px);
+}
+
+/* DIALOG RIGHT SIDE */
+
+.dialogRight {
+    height: var(--size-40P);
+    width: var(--size-30P);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--size-20px);
+}
+
+.stats {
+    font-size: var(--size-24px);
+    font-weight: var(--size-400);
+    width: var(--size-72P);
+    text-align: center;
+    color: var(--type-white);
+    border: var(--size-2px) solid var(--pokemonYellow);
+    border-radius: var(--size-0) var(--size-25px) var(--size-0) var(--size-25px);
+    margin: var(--size-0);
+}
+
+/* DIALOG BODY SEPERATOR */
+
+.evolutionContainer {
+    width: 100%;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--size-24px);
+    font-weight: var(--size-400);
+    width: var(--size-30P);
+    text-align: center;
+    color: var(--type-white);
+    border: var(--size-2px) solid var(--pokemonYellow);
+    border-radius: var(--size-0) var(--size-25px) var(--size-0) var(--size-25px);
+    margin: var(--size-0);
+    margin-left: 35%;
+}
+
+/* DIALOG BODY BOTTOM */
+
+.evolutionChain {
+    color: var(--type-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--size-20px);
+    margin: var(--size-0);
+    margin-top: var(--size-5px);
+    padding-left: var(--size-0);
+}
+
+.evolutionList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: var(--size-100P);
+}
+
+.evolutionHeadline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--size-24px);
+    font-weight: var(--size-400);
+    width: var(--size-100P);
+    text-align: center;
+    color: var(--type-white);
+    border: var(--size-2px) solid var(--pokemonYellow);
+    border-radius: var(--size-0) var(--size-25px) var(--size-0) var(--size-25px);
+    margin: var(--size-0);
+}
+
+.imageEvolution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--size-140px);
+    width: var(--size-75P);
+}
+
+
+/*
+***** DIALOG FOOTER 
+*/
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--size-20px);
+}
+
+.arrow {
+    height: var(--size-48px);
+    width: var(--size-48px);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow:hover .left {
+    content: url(../assets/icons/arrowLeftHover.svg);
+}
+
+.arrow:hover .right {
+    content: url(../assets/icons/arrowRightHover.svg);
 }
