@@ -1,3 +1,112 @@
+@media (max-width: 880px) {
+    .types {
+        font-size: var(--size-16px);
+    }
+
+    .size {
+        font-size: var(--size-16px);  
+    }
+    
+    .stats {
+        font-size: var(--size-16px);
+    }
+
+    h4 {
+        font-size: var(--size-16px);
+    }
+    
+    .evolutionHeadline {
+        font-size: var(--size-16px);
+    }
+}
+
+@media (max-width: 770px) {
+    .dialogHeader {
+        flex-direction: column;
+    }
+
+    .dialogLeft {
+        display: none;
+    }
+
+    .dialogRight {
+        display: none;
+    }
+
+    .dialogMiddle {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: var(--size-100P);
+        margin: var(--size-10px);
+        gap: var(--size-10px);
+    }
+
+    .dialogMiddleLeft {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+        width: var(--size-100P);
+    }
+
+    .dialogMiddleRight {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: var(--size-100P);
+    }
+
+    .types {
+        align-items: flex-end;
+    }
+
+    .typesContainer.single {
+        display: contents;
+        align-items: flex-end;
+    }
+
+    .evolutionChain {
+        gap: var(--size-10px);
+    }
+}
+
+@media (max-width: 580px) {
+    h4 {
+        width: var(--size-100P);
+        margin-left: var(--size-0);
+        margin-top: var(--size-5px);
+    }
+
+    .evolutionChain {
+        flex-direction: column;
+    }
+
+    .types {
+        width: var(--size-100P);
+    }
+
+    .size {
+        width: var(--size-100P);  
+    }
+    
+    .stats {
+        width: var(--size-100P);
+    }
+
+    .typesContainer.single {
+        width: var(--size-100P);
+    }
+
+    .typesContainer.multiple {
+        width: var(--size-100P);
+    }
+
+    .evolutionHeadline {
+        border-radius: var(--size-0) var(--size-25px) var(--size-0) var(--size-25px);
+    }
+}
+
 @media (max-width: 560px) {
     h3 {
         display: none;
@@ -5,5 +114,11 @@
     
     .searchText {
         display: none;
+    }
+}
+
+@media (max-width: 340px) {
+    h2 {
+        margin-left: var(--size-10px);
     }
 }
