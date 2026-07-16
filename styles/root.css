@@ -25,6 +25,7 @@
     --type-steel: rgb(184, 184, 208);
     --type-fairy: rgb(238, 153, 172);
     --type-black: rgb(0, 0, 0);
+    --type-white: rgb(255, 255, 255);
 
     /*
     ***** SIZE
@@ -33,6 +34,7 @@
     --size-400: 400;
 
     /* px */
+    --size-40Mpx: -40px;
     --size-1px: 1px;
     --size-2px: 2px;
     --size-5px: 5px;
@@ -52,11 +54,15 @@
     --size-148px: 148px;
     --size-180px: 180px;
     --size-240px: 240px;
+    --size-280px: 280px;
     --size-560px: 560px;
 
     /* % */
     --size-30P: 30%;
+    --size-40P: 40%;
     --size-80P: 80%;
+    --size-72P: 72%;
+    --size-75P: 75%;
     --size-100P: 100%;
 
     /* vh */
