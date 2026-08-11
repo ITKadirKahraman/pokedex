@@ -119,6 +119,10 @@
 
 @media (max-width: 340px) {
     h2 {
-        margin-left: var(--size-10px);
+        margin-left: var(--size-32px);
+    }
+
+    .searchPokemon {
+        display: none;
     }
 }
