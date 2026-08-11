@@ -26,6 +26,26 @@
     content: url(../assets/icons/closeHover.svg);
 }
 
+.favoritAndH2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: var(--size-40Mpx);
+}
+
+.heartBtn {
+    height: var(--size-48px);
+    width: var(--size-48px);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.heartBtn:hover .heart {
+    content: url(../assets/icons/heartCover.svg);
+}
+
 /*
 ***** DIALOG BODY 
 */
@@ -42,7 +62,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: var(--size-40Mpx);
+    margin: 0;
 }
 
 /* DIALOG LEFT SIDE */
@@ -83,8 +103,6 @@ h2 {
     justify-content: center;
     align-items: center;
     border: var(--size-2px) solid;
-    font-size: var(--size-16px);
-    font-weight: var(--size-400);
     font-size: var(--size-24px);
     font-weight: var(--size-400);
     width: var(--size-72P);
