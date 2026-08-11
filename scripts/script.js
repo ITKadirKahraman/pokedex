@@ -1,14 +1,17 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
-const pokemonInput = document.getElementById('pokemonInput');
 let allPokemons = []; // Cache von allen geladenen Pokémons
-let searchedPokemons = []; // die gesuchten Pokémons
+let displayedPokemons = []; // die gesuchten Pokémons
+let favoritePokemons = []; // die favoriten Pokémons werden gespeichert
 let currentIndex = 0; // welches Pokemon ist gerade im Dialog geöfnnet
 let contentRenderd = false; // Inhalt wurde noch nicht gerendert
+let currentOffset = 0;
+let loadedCount = 20; // wie viele hinzufügen
 const LOAD_COUNT = 20; // wie viele auf einmal laden
 const MAX_AMOUNT = 1025; // maximale Anzahl von Pokemon
 
 function init() {
     renderPage();
+    initSearch();
 }
 
 function renderPage() {
@@ -22,47 +25,74 @@ function clearMessageMinLetter() {
     document.getElementById('NoPokemonsFound').innerHTML = "";
 }
 
+function showLoading() {
+    document.getElementById("loadingScreen").style.display = "flex";
+}
+
+function hideLoading() {
+    document.getElementById("loadingScreen").style.display = "none";
+}
+
 async function fetchFirstTwentyPokemons() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
-    const data = await response.json();
+    showLoading();
 
-    for (let index = 0; index < data.results.length; index++) {
-        const pokemon = data.results[index];
+    try {
+        const response = await fetch(
+            `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
+        );
 
-        const response = await fetch(pokemon.url);
-        const details = await response.json();
+        const data = await response.json();
 
-        allPokemons.push(details);
+        for (const pokemon of data.results) {
+
+            const response = await fetch(pokemon.url);
+            const details = await response.json();
+
+            allPokemons.push(details);
+        }
+
+        currentOffset += LOAD_COUNT;
+
+        displayedPokemons = [...allPokemons];
+
+        updateDisplayedPokemons();
+
+    } finally {
+
+        hideLoading();
     }
-
-    renderLayoutPokemon();
 }
 
 async function loadMorePokemons() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0");
-    const data = await response.json();
 
-    for (let index = LOAD_COUNT + 1; index < MAX_AMOUNT; index++) {
-        const element = array[index];
-        
-    }
-    
-}
+    showLoading();
 
-async function searchPokemon() {
-    let search = document.getElementById('pokemonInput');
-    searchedPokemons = [];
+    try {
 
-    search.addEventListener("keydown", function (event) {
-        if(event.key === "Enter") {
-            renderLayoutPokemon();
-            searchedPokemons.push(search);
+        const response = await fetch(
+            `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
+        );
+
+        const data = await response.json();
+
+        for (const pokemon of data.results) {
+
+            const response = await fetch(pokemon.url);
+            const details = await response.json();
+
+            allPokemons.push(details);
         }
-    })
-}
 
-async function loadMoreBtn() {
-    loadMorePokemons();
+        currentOffset += LOAD_COUNT;
+
+        displayedPokemons = [...allPokemons];
+
+        updateDisplayedPokemons();
+
+    } finally {
+
+        hideLoading();
+    }
 }
 
 async function postData(url = "", data = {}) {
@@ -76,10 +106,23 @@ async function postData(url = "", data = {}) {
     return response.json();
 }
 
+function updateDisplayedPokemons() {
+    displayedPokemons = allPokemons.slice(0, loadedCount);
+
+    renderLayoutPokemon();
+}
+
+function handleSearch(event) {
+
+    if (event.key === "Enter") {
+        searchPokemon();
+    }
+}
+
 function renderLayoutPokemon() {
     let content = document.getElementById("pokemonList");
     content.innerHTML = '';
-    for (let index = 0; index < LOAD_COUNT; index++) {
-        content.innerHTML += getSmallPokemonCards(allPokemons[index], index);
-    }
+    displayedPokemons.forEach((pokemon, index) => {
+        content.innerHTML += getSmallPokemonCards(pokemon, index);
+    });
 }
