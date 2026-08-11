@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex</title>
+    <link rel="stylesheet" href="styles/loadingScreen.css">
     <link rel="stylesheet" href="styles/root.css">
     <link rel="stylesheet" href="styles/standard.css">
     <link rel="stylesheet" href="styles/smallCard.css">
@@ -14,23 +15,27 @@
     <link rel="shortcut icon" href="./assets/icons/pokéLogo.svg" type="image/x-icon">
 </head>
 <body onload="init()">
+    <div class="loader" id="loadingScreen">
+        <img class="loadingPokéball" src="./assets/icons/pokémonBall.svg" alt="Loadingscreen Pokéball">
+    </div>
     <header>
         <div id="headerContainer"></div>
     </header>
     <main data-id="content" id="startPagesCard">
         <ol id="pokemonList"></ol>
         <dialog id="dialog"></dialog>
-        <div id="#NoPokemonsFound"></div>
+        <div id="NoPokemonsFound"></div>
         <div id="loadMoreContainer"></div>
     </main>
     <footer>
         <div id="footerContainer"></div>
     </footer>
+    <script src="scripts/localStorage.js"></script>
     <script src="scripts/colors.js"></script>
     <script src="scripts/templates.js"></script>
     <script src="scripts/render.js"></script>
     <script src="scripts/dialog.js"></script>
-    <script src="scripts/localStorage.js"></script>
+    <script src="scripts/search.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
