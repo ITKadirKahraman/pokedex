@@ -85,6 +85,16 @@ h3 {
     justify-content: center;
 }
 
+select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--size-24px);
+    border: var(--size-1px) solid whitesmoke;
+    border-radius: var(--size-25px);
+    text-align: center;
+}
+
 .lopu {
     width: var(--size-32px);
     width: var(--size-32px);
