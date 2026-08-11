@@ -6,8 +6,16 @@ function getHeader() {
         </div>
         <div class="headerRight">
             <p class="searchText">Search <span class="spanHeader">Pokémon</span></p>
-            <input type="text" class="pokemonInput" id="pokemonInput" placeholder="Search Pokémon" onclick="searchPokemon()">
+            <input type="text" class="pokemonInput" id="pokemonInput" placeholder="Search Pokémon" onkeydown="handleSearch(event)">
             <button class="searchPokemon" onclick="searchPokemon()"><img class="lopu" src="./assets/icons/lopu.svg" alt="Lopu"></button>
+            <select id="typeFilter" onchange="filterTypePokemon()">
+                <option value="all">All Types</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="grass">Grass</option>
+                <option value="electric">Electric</option>
+                <option value="poison">Poison</option>
+            </select>
         </div>
     `;
 }
@@ -25,7 +33,7 @@ function getSmallPokemonCards(pokemon, index) {
                     <img data-id="cardImage" id="image" src="${pokemon.sprites.other["official-artwork"].front_default}" alt="${pokemon.name}">
                 </div>
                 <div class="cardBottom" id="types">
-                    <p>${pokemon.types.map(type => `<div class="type ${type.type.name}"> ${type.type.name}</div>`).join("")}</p>
+                    ${pokemon.types.map(type => `<div class="type ${type.type.name}">${type.type.name}</div>`).join("")}
                 </div>
             </button>
         </li>
@@ -39,7 +47,12 @@ function getDialogPokemonCard(pokemon) {
                 <button class="closeBtn" id="closeBtn" onclick="closeDialog()">
                     <img class="close" id="close" src="./assets/icons/close.svg" alt="Close">
                 </button>
-                <h2 style="color: ${backgroundColor}" id="idName">${pokemon.name.toUpperCase()}</h2>
+                <div class="favoritAndH2">
+                    <h2 style="color: ${backgroundColor}" id="idName">${pokemon.name.toUpperCase()}</h2>
+                    <button class="heartBtn" onclick="saveFavorite(${pokemon.id})">
+                        <img class="heart" src="./assets/icons/heart.svg" alt="Heart">
+                    </button>
+                </div>
                 <div class="dialogHeader">
                     <div class="dialogLeft">
                         <p class="size">ID${pokemon.id}</p>
@@ -106,7 +119,7 @@ function evolutionChain(pokemon) {
 
 function getLoadMoreButton() {
     return `
-        <button class="btnLoadMore" id="loadMore" onclick="loadMoreBtn()">Load more</button>
+        <button class="btnLoadMore" id="loadMore" onclick="loadMorePokemons()">Load more</button>
     `;
 }
 
