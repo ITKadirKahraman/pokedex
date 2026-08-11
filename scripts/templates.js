@@ -1,7 +1,7 @@
 function getHeader() {
     return `
         <div class="headerLeft">
-            <img class="pokédex" src="./assets/icons/pokédex.svg" alt="Pokémdex">
+            <img class="pokédex" src="./assets/icons/pokedex.svg" alt="Pokémdex">
             <h3>Pokédex with <span class="spanHeader">PokéAPI</span></h3>
         </div>
         <div class="headerRight">
