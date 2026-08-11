@@ -138,6 +138,6 @@ function getMessageMinLetters() {
 function getFooter() {
     return `
         <p class="footerText">Created by Kadir Kahraman</p>
-        <img class="pokéball" src="./assets/icons/pokémonBall.svg" alt="Pokémdex">
+        <img class="pokéball" src="./assets/icons/pokemonBall.svg" alt="Pokémdex">
     `;
 }
