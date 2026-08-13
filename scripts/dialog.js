@@ -73,3 +73,14 @@ function arrowRight() {
     
     renderDialog();
 }
+
+function arrow(currentIndex, direction) {
+    currentIndex += direction;
+    if(currentIndex < 0) {
+        currentIndex = allPokemons.length - 1;
+    } else if (currentIndex >= allPokemons.length) {
+        currentIndex = 0;
+    }
+
+    renderDialog();
+}
