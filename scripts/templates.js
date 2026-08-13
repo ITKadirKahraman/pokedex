@@ -21,10 +21,9 @@ function getHeader() {
 }
 
 function getSmallPokemonCards(pokemon, index) {
-    const backgroundColor = typeColors[pokemon.types[0].type.name];
     return `
         <li>
-            <button data-id="card" class="pokemonCard" style="background-color: ${backgroundColor}" onclick="openDialog(${index})">
+            <button data-id="card" class="pokemonCard" style="background-color: ${renderBackgroundColor(pokemon)}" onclick="openDialog(${index})">
                 <div class="cardHeader">
                     <span class="spanPokemon">ID${pokemon.id}</span>
                     <span class="spanPokemon">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</span>
@@ -41,14 +40,13 @@ function getSmallPokemonCards(pokemon, index) {
 }
 
 function getDialogPokemonCard(pokemon) {
-    const backgroundColor = typeColors[pokemon.types[0].type.name];
     return `
             <div class="dialogCard">
                 <button class="closeBtn" id="closeBtn" onclick="closeDialog()">
                     <img class="close" id="close" src="./assets/icons/close.svg" alt="Close">
                 </button>
                 <div class="favoritAndH2">
-                    <h2 style="color: ${backgroundColor}" id="idName">${pokemon.name.toUpperCase()}</h2>
+                    <h2 style="color: ${renderBackgroundColor(pokemon)}" id="idName">${pokemon.name.toUpperCase()}</h2>
                     <button class="heartBtn" onclick="saveFavorite(${pokemon.id})">
                         <img class="heart" src="./assets/icons/heart.svg" alt="Heart">
                     </button>
