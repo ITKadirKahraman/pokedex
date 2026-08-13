@@ -35,64 +35,50 @@ function hideLoading() {
 
 async function fetchFirstTwentyPokemons() {
     showLoading();
-
     try {
         const response = await fetch(
             `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
         );
-
         const data = await response.json();
-
         for (const pokemon of data.results) {
-
             const response = await fetch(pokemon.url);
             const details = await response.json();
-
             allPokemons.push(details);
         }
-
         currentOffset += LOAD_COUNT;
-
         displayedPokemons = [...allPokemons];
-
         updateDisplayedPokemons();
-
+    } catch(e) {
+        errorException(e);
     } finally {
-
         hideLoading();
     }
 }
 
 async function loadMorePokemons() {
-
     showLoading();
-
     try {
-
         const response = await fetch(
             `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
         );
-
         const data = await response.json();
-
         for (const pokemon of data.results) {
-
             const response = await fetch(pokemon.url);
             const details = await response.json();
-
             allPokemons.push(details);
         }
-
         currentOffset += LOAD_COUNT;
-
         displayedPokemons = [...allPokemons];
-
         updateDisplayedPokemons();
-
+    } catch(e) {
+        errorException(e);
     } finally {
-
         hideLoading();
     }
+}
+
+function errorException(exception) {
+    return console.error(`${exception.name}: ${exception.message}`);
 }
 
 async function postData(url = "", data = {}) {
@@ -108,12 +94,10 @@ async function postData(url = "", data = {}) {
 
 function updateDisplayedPokemons() {
     displayedPokemons = allPokemons.slice(0, loadedCount);
-
     renderLayoutPokemon();
 }
 
 function handleSearch(event) {
-
     if (event.key === "Enter") {
         searchPokemon();
     }
@@ -125,4 +109,9 @@ function renderLayoutPokemon() {
     displayedPokemons.forEach((pokemon, index) => {
         content.innerHTML += getSmallPokemonCards(pokemon, index);
     });
+}
+
+function renderBackgroundColor(pokemon) {
+    const backgroundColor = typeColors[pokemon.types[0].type.name];
+    return backgroundColor;
 }
