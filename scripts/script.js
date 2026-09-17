@@ -16,8 +16,7 @@ function init() {
 
 function renderPage() {
     renderHeader();
-    fetchFirstTwentyPokemons();
-    renderLoadMoreContainer();
+    loadMorePokemons();
     renderFooter();
 }
 
@@ -33,30 +32,20 @@ function hideLoading() {
     document.getElementById("loadingScreen").style.display = "none";
 }
 
-async function fetchFirstTwentyPokemons() {
-    showLoading();
-    try {
-        const response = await fetch(
-            `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
-        );
-        const data = await response.json();
-        for (const pokemon of data.results) {
-            const response = await fetch(pokemon.url);
-            const details = await response.json();
-            allPokemons.push(details);
-        }
-        currentOffset += LOAD_COUNT;
-        displayedPokemons = [...allPokemons];
-        updateDisplayedPokemons();
-    } catch(e) {
-        errorException(e);
-    } finally {
-        hideLoading();
-    }
+function showNoPokemonCards() {
+    const list = document.getElementById('pokemonList');
+    list.innerHTML = "";
+    showNoButtonLoadMore();
+}
+
+function showNoButtonLoadMore() {
+    const button = document.getElementById('loadMoreContainer');
+    button.innerHTML = "";
 }
 
 async function loadMorePokemons() {
     showLoading();
+    showNoPokemonCards();
     try {
         const response = await fetch(
             `${BASE_URL}?limit=${LOAD_COUNT}&offset=${currentOffset}`
@@ -68,7 +57,7 @@ async function loadMorePokemons() {
             allPokemons.push(details);
         }
         currentOffset += LOAD_COUNT;
-        displayedPokemons = [...allPokemons];
+        loadedCount += LOAD_COUNT;
         updateDisplayedPokemons();
     } catch(e) {
         errorException(e);
@@ -81,20 +70,10 @@ function errorException(exception) {
     return console.error(`${exception.name}: ${exception.message}`);
 }
 
-async function postData(url = "", data = {}) {
-    const response = await fetch(url, {
-        method: "GET", // "GET", POST, PUT, DELETE, etc.
-        headers: {
-            "Content-Type": "application/json",
-        }, 
-        body: JSON.stringify(data)
-    });
-    return response.json();
-}
-
 function updateDisplayedPokemons() {
     displayedPokemons = allPokemons.slice(0, loadedCount);
     renderLayoutPokemon();
+    renderLoadMoreContainer();
 }
 
 function handleSearch(event) {
