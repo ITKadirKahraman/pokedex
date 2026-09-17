@@ -4,7 +4,7 @@ ol {
     flex-wrap: wrap;
     gap: var(--size-16px);
     justify-content: center;
-    max-width: var(--size-100P);
+    max-width: var(--size-90P);
 }
 
 li {
