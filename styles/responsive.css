@@ -20,6 +20,12 @@
     }
 }
 
+@media (max-width: 830px) {
+    ol {
+        max-width: var(--size-80P);
+    }
+}
+
 @media (max-width: 770px) {
     .dialogHeader {
         flex-direction: column;
