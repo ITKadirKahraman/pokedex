@@ -7,6 +7,16 @@ function initSearch() {
     });
 }
 
+function cleanSearch() {
+    const search = document.getElementById('pokemonInput');
+    search.value = "";
+}
+
+function cleanTypeFilter() {
+    const typeFilter = document.getElementById('typeFilter');
+    typeFilter.value = "all";
+}
+
 function searchPokemon() {
     const input = document.getElementById("pokemonInput");
     const searchTerm = input.value.toLowerCase().trim();
