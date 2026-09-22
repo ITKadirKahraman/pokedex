@@ -59,6 +59,8 @@ async function loadMorePokemons() {
         currentOffset += LOAD_COUNT;
         loadedCount += LOAD_COUNT;
         updateDisplayedPokemons();
+        cleanSearch();
+        cleanTypeFilter();
     } catch(e) {
         errorException(e);
     } finally {
