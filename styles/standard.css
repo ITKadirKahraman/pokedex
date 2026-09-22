@@ -5,6 +5,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
