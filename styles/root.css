@@ -4,6 +4,7 @@
     */
     --background-color: rgb(0,6,1);
     --section-color: rgb(41, 49, 51);
+    --scrollbar-color: violet;
     --pokemonYellow: rgb(254, 202, 28);
     --pokemonSpan: rgb(55,97,168);
     --type-fire: rgb(230, 57, 70);
@@ -56,14 +57,16 @@
     --size-240px: 240px;
     --size-280px: 280px;
     --size-560px: 560px;
+    --size-1024px: 1024px;
 
     /* % */
     --size-10P: 10%;
     --size-30P: 30%;
     --size-40P: 40%;
-    --size-80P: 80%;
+    --size-60P: 60%;
     --size-72P: 72%;
     --size-75P: 75%;
+    --size-80P: 80%;
     --size-90P: 90%;
     --size-100P: 100%;
 
