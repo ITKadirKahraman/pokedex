@@ -10,18 +10,14 @@ function getFormLocalStorage() {
 }
 
 function saveFavorite(pokemonId) {
-
     const pokemon = allPokemons.find(
         pokemon => pokemon.id === pokemonId
     );
-
     const favorite = {
         id: pokemon.id,
         name: pokemon.name,
         image: pokemon.sprites.other["official-artwork"].front_default
     };
-
     favoritePokemons.push(favorite);
-
     saveToLocalStorage();
 }
