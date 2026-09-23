@@ -1,6 +1,7 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
 let allPokemons = []; // Cache von allen geladenen Pokémons
 let displayedPokemons = []; // die gesuchten Pokémons
+let pokemonCache = new Map();
 let favoritePokemons = []; // die favoriten Pokémons werden gespeichert
 let currentIndex = 0; // welches Pokemon ist gerade im Dialog geöfnnet
 let contentRenderd = false; // Inhalt wurde noch nicht gerendert
@@ -43,6 +44,24 @@ function showNoButtonLoadMore() {
     button.innerHTML = "";
 }
 
+async function getPokemonDetails(pokemon) {
+    if(pokemonCache.has(pokemon.name)) {
+        return pokemonCache.get(pokemon.name);
+    }
+    try {
+        const response = await fetch(pokemon.url);
+        if (!response.ok) {
+            throw new Error(`Pokémon ${pokemon.name} konnte nicht geladen werden.`);
+        }
+        const details = await response.json();
+        pokemonCache.set(pokemon.name, details);
+        return details;
+    } catch(e) {
+        errorException(e);
+    }
+}
+
+
 async function loadMorePokemons() {
     showLoading();
     showNoPokemonCards();
@@ -52,8 +71,7 @@ async function loadMorePokemons() {
         );
         const data = await response.json();
         for (const pokemon of data.results) {
-            const response = await fetch(pokemon.url);
-            const details = await response.json();
+            const details = await getPokemonDetails(pokemon);
             allPokemons.push(details);
         }
         currentOffset += LOAD_COUNT;
