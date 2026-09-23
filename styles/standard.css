@@ -1,7 +1,8 @@
 html, body {
     margin: var(--size-0);
     padding: var(--size-0);
-    width: var(--size-100P);
+    max-width: var(--size-100P);
+    max-height: var(--size-100P);
     scroll-behavior: smooth;
 }
 
@@ -21,4 +22,7 @@ main {
     flex: 1;
     flex-direction: column;
     align-items: center;
+    align-self: center;
+    width: var(--size-1024px);
+    max-width: var(--size-100P);
 }
