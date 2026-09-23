@@ -1,6 +1,18 @@
 @media (max-width: 880px) {
+    #dialog {
+        max-height: 90vh;
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-color) var(--background-color);
+    }
+
+    .dialogCard {
+        max-height: 90vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
     .types {
-        font-size: var(--size-16px);
+        font-size: var(--size-18px);
     }
 
     .size {
@@ -77,6 +89,12 @@
     }
 }
 
+@media (max-width: 630px) {
+    h3 {
+        display: none;
+    }
+}
+
 @media (max-width: 580px) {
     h4 {
         width: var(--size-100P);
@@ -114,12 +132,19 @@
 }
 
 @media (max-width: 560px) {
-    h3 {
-        display: none;
-    }
-    
     .searchText {
         display: none;
+    }
+}
+
+@media (max-width: 470px) {
+    ol {
+        max-width: var(--size-60P);
+    }
+
+    .pokemonCard {
+        height: var(--size-240px);
+        width: var(--size-240px);
     }
 }
 
