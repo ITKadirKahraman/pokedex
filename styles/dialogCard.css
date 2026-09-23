@@ -1,6 +1,6 @@
 #dialog {
-    height: var(--size-80P);
-    width: var(--size-80P);
+    max-height: var(--size-80P);
+    max-width: var(--size-80P);
     border: var(--size-2px) solid var(--pokemonYellow);
     border-radius: var(--size-25px);
     background-color: var(--background-color);
@@ -93,10 +93,12 @@ dialog::backdrop {
 
 .typesContainer.single {
     width: var(--size-100P);
+    color: white;
 }
 
 .typesContainer.multiple {
     width: var(--size-75P);
+    color: white;
 }
 
 .none {
