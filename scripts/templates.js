@@ -9,7 +9,7 @@ function getHeader() {
             <input type="text" class="pokemonInput" id="pokemonInput" placeholder="Search Pokémon" onkeydown="handleSearch(event)">
             <button class="searchPokemon" onclick="searchPokemon()"><img class="lopu" src="./assets/icons/lopu.svg" alt="Lopu"></button>
             <select id="typeFilter" onchange="filterTypePokemon()">
-                <option value="all">All Types</option>
+                <option value="all">All</option>
                 <option value="fire">Fire</option>
                 <option value="water">Water</option>
                 <option value="grass">Grass</option>
