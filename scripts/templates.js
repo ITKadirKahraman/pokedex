@@ -1,5 +1,6 @@
 function getHeader() {
     return `
+    <div class="headerContainer">
         <div class="headerLeft">
             <img class="pokédex" src="./assets/icons/pokedex.svg" alt="Pokémdex">
             <h3>Pokédex with <span class="spanHeader">PokéAPI</span></h3>
@@ -17,6 +18,7 @@ function getHeader() {
                 <option value="poison">Poison</option>
             </select>
         </div>
+    </div>
     `;
 }
 
