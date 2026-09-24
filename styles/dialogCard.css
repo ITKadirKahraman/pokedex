@@ -99,6 +99,7 @@ dialog::backdrop {
 .typesContainer.multiple {
     width: var(--size-75P);
     color: white;
+    flex-direction: column;
 }
 
 .none {
@@ -110,14 +111,14 @@ dialog::backdrop {
     justify-content: center;
     align-items: center;
     border: var(--size-2px) solid;
-    font-size: var(--size-24px);
+    font-size: var(--size-18px);
     font-weight: var(--size-400);
     width: var(--size-72P);
     border-radius: var(--size-25px) var(--size-0) var(--size-25px) var(--size-0);
 }
 
 .size {
-    font-size: var(--size-24px);
+    font-size: var(--size-18px);
     font-weight: var(--size-400);
     width: var(--size-72P);
     text-align: center;
