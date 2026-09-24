@@ -1,14 +1,14 @@
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
-let allPokemons = []; // Cache von allen geladenen Pokémons
-let displayedPokemons = []; // die gesuchten Pokémons
+let allPokemons = []; // Cache 
+let displayedPokemons = []; // searched pokemons
 let pokemonCache = new Map();
-let favoritePokemons = []; // die favoriten Pokémons werden gespeichert
-let currentIndex = 0; // welches Pokemon ist gerade im Dialog geöfnnet
-let contentRenderd = false; // Inhalt wurde noch nicht gerendert
+let favoritePokemons = []; // favoriten Pokémons saved
+let currentIndex = 0; // the open pokemon with dialog
+let contentRenderd = false; // not render
 let currentOffset = 0;
-let loadedCount = 20; // wie viele hinzufügen
-const LOAD_COUNT = 20; // wie viele auf einmal laden
-const MAX_AMOUNT = 1025; // maximale Anzahl von Pokemon
+let loadedCount = 20; // added
+const LOAD_COUNT = 20; // how much
+const MAX_AMOUNT = 1025; // max count of pokemons
 
 function init() {
     renderPage();
@@ -60,7 +60,6 @@ async function getPokemonDetails(pokemon) {
         errorException(e);
     }
 }
-
 
 async function loadMorePokemons() {
     showLoading();
